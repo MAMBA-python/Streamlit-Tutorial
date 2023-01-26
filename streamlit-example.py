@@ -50,8 +50,8 @@ st.latex(r''' a+a r^1+a r^2+a r^3 ''')
 
 # # m = leafmap.Map(center=[20, 0], zoom=1)
 # # m.add_gdf(gdf_bruggen_popup)
-m = leafmap.Map(center=[20, 0], zoom=3)
-gdf.explore(m=m, marker_type='circle', popup=True, tooltip=False)
+# m = leafmap.Map(center=[20, 0], zoom=3)
+# gdf.explore(m=m, marker_type='circle', popup=True, tooltip=False)
 
-# call to render Folium map in Streamlit
-st_data = st_folium(m, width=725)
+# # call to render Folium map in Streamlit
+# st_data = st_folium(m, width=725)
