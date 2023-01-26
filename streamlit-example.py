@@ -9,12 +9,12 @@ Created on Thu Jan 26 00:23:59 2023
 import streamlit as st
 import pandas as pd
 import numpy as np
-import geopandas as gpd
-import contextily as ctx
-import altair as alt
-import matplotlib.pyplot as plt
-import leafmap.foliumap as leafmap
-from streamlit_folium import st_folium
+# import geopandas as gpd
+# import contextily as ctx
+# import altair as alt
+# import matplotlib.pyplot as plt
+# import leafmap.foliumap as leafmap
+# from streamlit_folium import st_folium
 
 # %%
 
@@ -41,15 +41,15 @@ st.latex(r''' a+a r^1+a r^2+a r^3 ''')
 
 # %%
 
-df = pd.read_csv(r'/home/izeboud/Downloads/vb-data-streamlit.csv')
-# df_bruggen.head()
+# df = pd.read_csv(r'/home/izeboud/Downloads/vb-data-streamlit.csv')
+# # df_bruggen.head()
 
-# GeoDataFrame maken van DataFrame, waarin x en y gedefinieerd en 
-geometry = gpd.points_from_xy(df['Long'], df['Lat'])
-gdf = gpd.GeoDataFrame(df, geometry=geometry, crs=4326)
+# # GeoDataFrame maken van DataFrame, waarin x en y gedefinieerd en 
+# geometry = gpd.points_from_xy(df['Long'], df['Lat'])
+# gdf = gpd.GeoDataFrame(df, geometry=geometry, crs=4326)
 
-# m = leafmap.Map(center=[20, 0], zoom=1)
-# m.add_gdf(gdf_bruggen_popup)
+# # m = leafmap.Map(center=[20, 0], zoom=1)
+# # m.add_gdf(gdf_bruggen_popup)
 m = leafmap.Map(center=[20, 0], zoom=3)
 gdf.explore(m=m, marker_type='circle', popup=True, tooltip=False)
 
