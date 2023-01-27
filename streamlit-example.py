@@ -9,7 +9,6 @@ Created on Thu Jan 26 00:23:59 2023
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 
 # %%
 
