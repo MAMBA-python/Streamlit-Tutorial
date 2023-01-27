@@ -9,49 +9,40 @@ Created on Thu Jan 26 00:23:59 2023
 import streamlit as st
 import pandas as pd
 import numpy as np
-# import geopandas as gpd
-# import contextily as ctx
-# import altair as alt
-# import matplotlib.pyplot as plt
-# import leafmap.foliumap as leafmap
-# from streamlit_folium import st_folium
+import matplotlib.pyplot as plt
 
 # %%
 
 st.markdown("""
-            # Bigger header
-            ## Anything is possible with Markdown
-            ### smaller header
+            # Example Streamlit
+            ## Because we can. 
             
             This works exactly the same as your markdown cells in 
-            jupyter notebook!
+            jupyter notebook! You can write any pretty text here.
             
-            1. some summations
-            2. nmbr 2
-            
-            use the `pandas` package. Got to **love** *markdown*!
+            1. `different` ways of highlighting text
+            2. like **bold** and *italic*
             """)
-st.subheader("this is the subheader")
-st.caption("this is the caption")
-st.code("x=2021")
-st.latex(r''' a+a r^1+a r^2+a r^3 ''')
 
+### DATAFRAMES PLOTTEN
+# Test data
+df= pd.DataFrame(
+    np.random.randn(10, 2),
+    columns=['x', 'y'])
 
-# st.video("/home/izeboud/Downloads/WhatsApp Video 2023-01-25 at 16.10.42.mp4")
+st.markdown(
+    """
+    # Show your dataframe
+    """
+    )
 
-# %%
+st.markdown("## Area Chart")
+st.area_chart(df)
 
-# df = pd.read_csv(r'/home/izeboud/Downloads/vb-data-streamlit.csv')
-# # df_bruggen.head()
+st.markdown("## Any matplotlib Figure")
+fig, ax = plt.subplots(1)
+df.plot(ax=ax)
+st.plotly_chart(fig)
 
-# # GeoDataFrame maken van DataFrame, waarin x en y gedefinieerd en 
-# geometry = gpd.points_from_xy(df['Long'], df['Lat'])
-# gdf = gpd.GeoDataFrame(df, geometry=geometry, crs=4326)
-
-# # m = leafmap.Map(center=[20, 0], zoom=1)
-# # m.add_gdf(gdf_bruggen_popup)
-# m = leafmap.Map(center=[20, 0], zoom=3)
-# gdf.explore(m=m, marker_type='circle', popup=True, tooltip=False)
-
-# # call to render Folium map in Streamlit
-# st_data = st_folium(m, width=725)
+st.markdown("## Streamlit Bar Chart")
+st.bar_chart(df)
