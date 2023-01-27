@@ -38,3 +38,5 @@ with col1:
     
     option = st.selectbox("choose your chart", ["bar chart", "area chart", "no chart"])
     submit_button = st.button(label='Submit', on_click=display_graph)
+
+st.write('hallo')
